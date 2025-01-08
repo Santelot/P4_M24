@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P4-M24</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .header { background-color: #4CAF50; color: white; text-align: center; padding: 10px; }
+        .dropdown { margin-bottom: 20px; }
+        .dropdown select { font-size: 1em; padding: 5px; }
+        .activity { margin-bottom: 20px; }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content { display: none; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+            const activity2 = document.getElementById('activity-2');
+            const step6Activity3 = document.querySelector('#activity-3 .step-6');
+
+            if (selectedTime === '45') {
+                if (activity2) activity2.style.display = 'none';
+                if (step6Activity3) step6Activity3.style.display = 'table-row';
+            } else if (selectedTime === '40') {
+                if (activity2) activity2.style.display = 'none';
+                if (step6Activity3) step6Activity3.style.display = 'none';
+            } else {
+                if (activity2) activity2.style.display = 'block';
+                if (step6Activity3) step6Activity3.style.display = 'table-row';
+            }
+
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P4-M24</h1>
+    </div>
+    <div class="container">
+        <!-- Selector de tiempo de clase -->
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+
+        <!-- Aquí se insertarán las actividades dinámicamente -->
+        
+        <!-- Actividad 0 -->
+<div id="activity-0" class="activity" data-time="N/A">
+    <div class="banner" onclick="toggleContent('activity_0_content')">
+        <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Verificar que estén disponibles los materiales y recursos necesarios para la base de exploración.
+        </div>
+    </div>
+    <div id="activity_0_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1:</strong> Proyectar Diapositiva 1 "Lista de Materiales: ¡Preparando la Base de Exploración!" y verificar que estén disponibles los materiales y recursos necesarios:
+                    <ul>
+                        <li><strong>Cutebots</strong> con sensores de línea, sensor ultrasónico y baterías cargadas.</li>
+                        <li><strong>Computadoras</strong> o tabletas con software de programación instalado.</li>
+                        <li><strong>Plantillas</strong> de seguidor de líneas de Gnius Club con curvas, bifurcaciones y espacio para obstáculos.</li>
+                        <li><strong>Obstáculos pequeños</strong> (estuches, legos o cualquier otro objeto).</li>
+                        <li><strong>Sets de 6 legos</strong> por estudiante.</li>
+                    </ul>
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    No aplica
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity" data-time="2">
+    <div class="banner" onclick="toggleContent('activity_1_content')">
+        <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Bienvenida y presentación de los objetivos del día.
+        </div>
+    </div>
+    <div id="activity_1_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (Tiempo: 0.5 minutos):</strong> Proyectar Diapositiva 2 "¡Bienvenidos Exploradores de RoboExploración!" con el tema del día.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Hola, Genios! 🌟 ¡Bienvenidos a la base de exploración de RoboExploración! Hoy, como exploradores de entornos complejos, vamos a programar nuestros Cutebots para que naveguen utilizando sensores ultrasónicos y de línea, superando obstáculos en cada ruta. ¡Prepárense para misiones que pondrán a prueba nuestra capacidad de adaptación, toma de decisiones y trabajo en equipo! 🚀"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (Tiempo: 0.5 minutos):</strong> Proyectar Diapositiva 3 "¿Cómo te sientes hoy, Explorador?" con poses temáticas de exploración y uso de sensores.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Exploradores, díganme cómo se sienten hoy: <br><br>
+                    - <strong>Si están listos</strong> para comenzar a explorar y detectar obstáculos, activen el Modo Exploración, moviendo las manos como si estuvieran usando los sensores para buscar rutas, y digan '¡Sensores activados!'. 📡 <br><br>
+                    - <strong>Si necesitan un poco más</strong> de concentración para planificar las rutas, pongan las manos en las sienes como si estuvieran analizando los datos de los sensores. 🧐 <br><br>
+                    ¡Vamos a calibrar nuestras mentes y prepararnos para la exploración!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (Tiempo: 0.5 minutos):</strong> Proyectar Diapositiva 4 "Ritual de Agradecimiento: ¡Gracias por la Misión de Exploración!" y guiar a los estudiantes en el ritual temático.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Juntamos nuestras manos y decimos: '¡Gracias por estar aquí, Genios exploradores! Hoy vamos a programar nuestros Cutebots para que sigan líneas, detecten y eviten obstáculos utilizando el sensor ultrasónico y trabajemos en equipo para lograr misiones exitosas. ¡Será un día lleno de aprendizaje y descubrimientos en la exploración robótica! 🌟💡'"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (Tiempo: 0.5 minutos):</strong> Proyectar Diapositiva 5 "Objetivos de la Misión: ¡Explorando Nuevos Entornos!".
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Atención, Exploradores de RoboExploración! Aquí están los objetivos de nuestra misión de hoy: <br><br>
+                    1. <strong>Programar el Cutebot</strong> para que siga una línea y evite obstáculos utilizando el sensor ultrasónico. <br><br>
+                    2. <strong>Programar el Cutebot</strong> para que siga una línea con curvas y esquive obstáculos a un lado del camino. <br><br>
+                    3. <strong>Trabajar en equipo</strong> para mejorar nuestro código y optimizar el rendimiento del Cutebot en entornos complejos. <br><br>
+                    ¡Prepárense para explorar nuevos terrenos y descubrir cómo dominar la navegación con múltiples sensores!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity" data-time="3">
+    <div class="banner" onclick="toggleContent('activity_2_content')">
+        <div class="title">💡 Actividad 2: Brain Vitamin ⏰ Tiempo: 3 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Simulación de exploración utilizando el tacto y la comunicación.
+        </div>
+    </div>
+    <div id="activity_2_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (Tiempo: 1 minuto):</strong> Proyectar Diapositiva 6 "¡Activación Cerebral: Construcción a Ciegas!". Explicar que realizarán un ejercicio para simular la exploración utilizando el tacto y la comunicación.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas de RoboExploración, vamos a activar nuestra percepción espacial, coordinación y comunicación con un nuevo desafío! Hoy haremos un ejercicio que simulará cómo exploramos un entorno desconocido utilizando el tacto y la comunicación. ¡Prepárense para construir a ciegas y trabajar en equipo como verdaderos exploradores!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (Tiempo: 1 minuto):</strong> Proyectar Diapositiva 7 "¡Explora con tus Manos y tu Voz: Construcción a Ciegas!". Mostrar instrucciones para el ejercicio.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Vamos a explorar con nuestros sentidos, especialistas! Sigan mis instrucciones: <br><br>
+                    1. En parejas, un especialista cerrará los ojos (o se cubrirá los ojos con un pañuelo) y el otro construirá un modelo con 3 legos. <br><br>
+                    2. El especialista con los ojos cerrados tocará el modelo para identificar su forma. <br><br>
+                    3. El especialista que construyó el modelo esconderá su creación, y el otro tratará de construir lo que sintió. <br><br>
+                    4. El especialista que construyó el modelo dará pistas utilizando sólo su voz, sin mostrar el modelo. <br><br>
+                    ¡Este ejercicio activará nuestra percepción espacial, coordinación, toma de decisiones y comunicación!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (Tiempo: 1 minuto):</strong> Proyectar Diapositiva 8 "¡Reflexión: Exploración y Construcción en Equipo!". Guiar una breve discusión sobre cómo el ejercicio se relaciona con la programación de Cutebots en la navegación con múltiples sensores.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Excelente trabajo, especialistas! Ahora reflexionen: <br><br>
+                    - ¿Cómo creen que este ejercicio mejora nuestra <span style='color: red; font-weight: bold;'>percepción espacial</span>, <span style='color: red; font-weight: bold;'>coordinación</span> y <span style='color: red; font-weight: bold;'>comunicación</span>? <br><br>
+                    - ¿Qué habilidades activamos al tocar y describir el modelo sin verlo? <br><br>
+                    Recuerden, la precisión en la percepción, la comunicación clara y el trabajo en equipo son fundamentales para dominar la navegación autónoma con nuestros Cutebots. <br><br>
+                    ¡La práctica nos hará exploradores más hábiles y precisos!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity" data-time="30">
+    <div class="banner" onclick="toggleContent('activity_3_content')">
+        <div class="title">🚀 Actividad 3: Challenge ⏰ Tiempo: 30 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Navegación autónoma utilizando múltiples sensores.
+        </div>
+    </div>
+    <div id="activity_3_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (Tiempo: 1 minuto):</strong> Proyectar Diapositiva 9 "¡Comienza el Desafío: Navegación con Sensores Múltiples!". Explicar el objetivo general del reto y los niveles de dificultad.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas de RoboExploración, la aventura de la navegación autónoma con múltiples sensores está a punto de comenzar! 🚀 Hoy programaremos nuestros Cutebots para superar desafíos que combinan la información de los sensores de línea y el sensor ultrasónico. Tendremos tres niveles: <strong>Rookie</strong>, <strong>Master</strong> y <strong>Hacker</strong>, cada uno con retos de programación diferentes. ¡Elijan su reto y que comience la exploración!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (Tiempo: 1 minuto):</strong> Proyectar Diapositiva 10 "Preparación para el Desafío: ¡Listos para la Exploración!". Guiar a los estudiantes para verificar y organizar los materiales antes de comenzar.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Antes de comenzar la exploración, especialistas, revisen su equipo! <br><br>
+                    - <strong>Los Cutebots</strong> con sensores de línea, sensor ultrasónico y baterías cargadas. <br><br>
+                    - <strong>Sus computadoras</strong> o tabletas listas para programar. <br><br>
+                    - <strong>Plantillas</strong> de seguimiento de líneas de Gnius Club con curvas, bifurcaciones y espacio para obstáculos. <br><br>
+                    - <strong>Obstáculos pequeños</strong> (estuches, legos o cualquier objeto). <br><br>
+                    ¡Una buena preparación es clave para el éxito!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (Tiempo: 1 minuto):</strong> Proyectar Diapositiva 11 "Espacio de Pruebas: ¡Entornos de Exploración Personalizados!". Pedir a los equipos que coloquen las plantillas en su espacio de trabajo y posicionen los obstáculos de forma estratégica.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas, es hora de crear sus entornos de exploración! Coloquen las plantillas en sus espacios de trabajo y organicen los obstáculos de forma estratégica en la pista. Recuerden que la creatividad y la planificación son claves para superar los desafíos de programación y navegación con múltiples sensores en su entorno."
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (Tiempo: 2 minutos):</strong> Proyectar Diapositiva 12 "Desafíos de Exploración: ¡Sensores en Acción!" y detallar los objetivos y condiciones de cada nivel.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Atención, especialistas! Aquí tienen los desafíos que pondrán a prueba sus habilidades: <br><br>
+                    <strong>Nivel Rookie:</strong> <br>
+                    <span style='color: red; font-weight: bold;'>Objetivo:</span> Programar el Cutebot para seguir una línea y evitar un obstáculo en el camino con el sensor ultrasónico. <br>
+                    <span style='color: red; font-weight: bold;'>Condiciones:</span> El Cutebot debe evitar el obstáculo y seguir la línea. <br>
+                    <span style='color: red; font-weight: bold;'>Consejo:</span> Utiliza un bloque condicional para la decisión del giro. <br><br>
+
+                    <strong>Nivel Master:</strong> <br>
+                    <span style='color: red; font-weight: bold;'>Objetivo:</span> Programar el Cutebot para seguir una línea con curvas y evitar un obstáculo a un lado con el sensor ultrasónico. <br>
+                    <span style='color: red; font-weight: bold;'>Condiciones:</span> El Cutebot debe seguir la línea con curvas y evitar el obstáculo. <br>
+                    <span style='color: red; font-weight: bold;'>Consejo:</span> Utiliza bloques condicionales y pequeños giros para esquivar el obstáculo. <br><br>
+
+                    <strong>Nivel Hacker:</strong> <br>
+                    <span style='color: red; font-weight: bold;'>Objetivo:</span> Programar el Cutebot para navegar en un laberinto con múltiples obstáculos. <br>
+                    <span style='color: red; font-weight: bold;'>Condiciones:</span> El Cutebot debe seguir el laberinto completo y evitar todos los obstáculos. <br>
+                    <span style='color: red; font-weight: bold;'>Consejo:</span> Planifica la ruta y crea un algoritmo de toma de decisiones combinando la información de ambos sensores."
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 5 (Tiempo: 20 minutos):</strong> Proyectar Diapositiva 13 "¡Manos a la Obra: A Programar la Navegación con Sensores!". Explicar que los equipos programarán sus Cutebots con el objetivo de superar los desafíos de cada misión.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Manos a la obra, especialistas! 🚀 Ahora programen sus Cutebots para dominar la navegación autónoma con múltiples sensores. Recuerden que la lógica, la precisión, la adaptación y la toma de decisiones son sus mejores aliados para superar cada desafío. ¡Adelante, a explorar nuevos territorios!"
+                </td>
+            </tr>
+            <tr class="step-6">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 6 (Tiempo: 5 minutos):</strong> Proyectar Diapositiva 14 "Pruebas y Ajustes: ¡Perfeccionando la Navegación Autónoma!". Supervisar mientras los equipos prueban sus programas y ajustan las acciones de sus Cutebots en la ruta.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas, es hora de poner a prueba sus creaciones! 🧪 Observen cómo sus Cutebots responden a los desafíos de la ruta. Ajusten el código si es necesario para que el seguimiento, la detección y la evasión de obstáculos sean óptimos. ¡La perseverancia es la clave del éxito en cada misión de exploración!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 7 (Tiempo: 3 minutos):</strong> Proyectar Diapositiva 15 "Demostración de Exploración: Compartiendo Estrategias". Invitar a los equipos a mostrar su trabajo y reflexionar sobre sus estrategias y resultados en la ruta de exploración.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas en RoboExploración, es hora de compartir sus resultados! Presenten sus Cutebots en acción y expliquen qué estrategias usaron para superar cada desafío. ¡Aprendamos unos de otros y celebremos nuestra creatividad y trabajo en equipo en la base de operaciones!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 8 (Tiempo: 0.5 minutos):</strong> Proyectar Diapositiva 16 "Revisión de Objetivos: ¡Navegación Autónoma Dominada!". Reflexionar con los estudiantes sobre lo aprendido y cómo lograron cumplir los objetivos planteados en cada misión.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Felicidades, Especialistas de RoboExploración! 🌟 Hoy han dominado la navegación autónoma: <br><br>
+                    - Programaron el Cutebot para seguir una línea y evitar obstáculos utilizando el sensor ultrasónico. <br><br>
+                    - Programaron el Cutebot para seguir una línea con curvas y evitar obstáculos. <br><br>
+                    - Trabajaron en equipo para mejorar su código de seguimiento y navegación en entornos complejos. <br><br>
+                    ¡Han demostrado ser unos verdaderos expertos en la exploración autónoma!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity" data-time="7.5">
+    <div class="banner" onclick="toggleContent('activity_4_content')">
+        <div class="title">🤝 Actividad 4: Team Gnius ⏰ Tiempo: 7.5 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Colaboración en equipo para optimizar la navegación autónoma.
+        </div>
+    </div>
+    <div id="activity_4_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (Tiempo: 0.5 minutos):</strong> Proyectar Diapositiva 17 "Team Gnius: ¡Análisis de la Exploración en Equipo!" Explicar cómo los roles y la colaboración permitirán revisar y optimizar los programas en las misiones de exploración.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas de RoboExploración, es momento de unir fuerzas como un equipo de ingenieros! 🤝 Usaremos el <strong>Team CANVAS</strong> para analizar cómo abordaron los desafíos de exploración y cómo podemos mejorar nuestras estrategias y nuestro código en equipo. Cada equipo tendrá roles clave: el <span style='color: red; font-weight: bold;'>Líder</span> guiará la conversación, el <span style='color: red; font-weight: bold;'>Programador</span> ajustará los códigos y el <span style='color: red; font-weight: bold;'>Observador</span> analizará el desempeño. ¡Juntos lograremos dominar la navegación autónoma!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (Tiempo: 1 minuto):</strong> Proyectar la Diapositiva 18 "Formación de Equipos: ¡Expertos en Navegación Autónoma!". Los estudiantes tendrán 1 minuto para formar equipos de 3 y asignar roles: Líder, Programador y Observador.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Tienen 1 minuto para formar sus equipos de 3, especialistas! Recuerden: <br><br>
+                    - El <span style='color: red; font-weight: bold;'>Líder</span> dirigirá la conversación y guiará el análisis del recorrido de la exploración. <br><br>
+                    - El <span style='color: red; font-weight: bold;'>Programador</span> ajustará el código basado en las ideas del equipo. <br><br>
+                    - El <span style='color: red; font-weight: bold;'>Observador</span> analizará el rendimiento del Cutebot en la ruta y las posibilidades de mejorar el código. <br><br>
+                    ¡Trabajemos juntos como un equipo de expertos en programación y mejora colaborativa!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (Tiempo: 3 minutos):</strong> Proyectar la Diapositiva 19 "Team CANVAS: Estrategias para la Exploración Autónoma". Cada equipo debe: 1. Analizar el trabajo realizado. 2. Proponer mejoras según los roles asignados. 3. Diseñar un plan conjunto para optimizar el seguimiento y la detección de obstáculos del Cutebot y mejorar el código en equipo.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Usen el <strong>Team CANVAS</strong> para reflexionar sobre su trabajo en la exploración autónoma, especialistas. Pregúntense: <br><br>
+                    - ¿Qué hicimos bien al programar el seguimiento de líneas y la detección de obstáculos? <br><br>
+                    - ¿Qué podemos mejorar en la toma de decisiones y la adaptación a los cambios de ruta? <br><br>
+                    - ¿Cómo podemos trabajar juntos para que nuestro Cutebot tenga el mejor desempeño en la ruta y optimizar nuestro código de navegación? <br><br>
+                    ¡Compartan ideas y trabajen juntos para mejorar sus estrategias y el código en equipo!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (Tiempo: 3 minutos):</strong> Proyectar la Diapositiva 20 "¡Ajustes Finales: Optimizando la Ruta y el Código de Exploración!". Los equipos trabajan en las siguientes tareas: Líder organiza, Programador ajusta códigos, Observador verifica el desempeño en la ruta y el impacto de las mejoras en el código.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas, es momento de aplicar las mejoras en sus Cutebots y en su código! <br><br>
+                    - <span style='color: red; font-weight: bold;'>Programadores:</span> ajusten los códigos basándose en las recomendaciones de su equipo. <br><br>
+                    - <span style='color: red; font-weight: bold;'>Líderes:</span> asegúrense de que todos estén colaborando en la mejora del código. <br><br>
+                    - <span style='color: red; font-weight: bold;'>Observadores:</span> verifiquen cómo sus Cutebots responden a la ruta de exploración y si han mejorado la eficiencia, la precisión y la calidad del código. <br><br>
+                    ¡Trabajen juntos para que la navegación sea más precisa, eficiente y segura, y para optimizar su código de exploración!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity" data-time="3.5">
+    <div class="banner" onclick="toggleContent('activity_5_content')">
+        <div class="title">🏅 Actividad 5: Honor the Lab ⏰ Tiempo: 3.5 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Reflexión final y organización del espacio de trabajo.
+        </div>
+    </div>
+    <div id="activity_5_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (Tiempo: 0.5 minutos):</strong> Proyectar la Diapositiva 21 "Revisión de Objetivos: ¡Exploración Autónoma Dominada y Código Mejorado!". Leer los objetivos planteados al inicio y reflexionar sobre lo aprendido y logrado en equipo.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas de RoboExploración, es momento de celebrar sus logros como expertos en la navegación autónoma con múltiples sensores y la colaboración en la mejora del código! 🌟 Revisemos nuestros objetivos: <br><br>
+                    - ¿Programamos el Cutebot para seguir una línea y evitar obstáculos utilizando el sensor ultrasónico? <br><br>
+                    - ¿Programamos el Cutebot para que siga una línea con curvas y esquive obstáculos a un lado del camino? <br><br>
+                    - ¿Trabajamos en equipo para mejorar nuestro código y optimizar el rendimiento en entornos complejos? <br><br>
+                    ¡Estoy muy orgulloso del trabajo que realizaron hoy y de su compromiso con la precisión, la eficiencia y la colaboración!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (Tiempo: 1 minuto):</strong> Felicitar a los estudiantes por su participación y esfuerzo, sin destacar a individuos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Hoy, todos fueron increíbles especialistas en navegación autónoma. Cada equipo colaboró para que los Cutebots siguieran rutas complejas, adaptándose a los obstáculos y optimizando su código. ¡Felicidades a todo el equipo por su dedicación y trabajo colaborativo!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (Tiempo: 2 minutos):</strong> Proyectar la Diapositiva 22 "¡A Organizar la Base: Próximas Exploraciones Autónomas!". Guiar a los estudiantes para recoger y organizar todos los materiales utilizados durante la misión en la base de operaciones.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Ahora, como profesionales de la robótica y la programación, honremos nuestro espacio de trabajo. Cada equipo es responsable de recoger y organizar todos los materiales utilizados durante esta misión de exploración autónoma: <br><br>
+                    - <span style='color: red; font-weight: bold;'>Guarden</span> sus Cutebots y computadoras con cuidado. <br><br>
+                    - <span style='color: red; font-weight: bold;'>Asegúrense</span> de que las plantillas de seguimiento estén guardadas en su lugar. <br><br>
+                    - <span style='color: red; font-weight: bold;'>Recojan</span> los obstáculos y guárdenlos en su lugar. <br><br>
+                    - <span style='color: red; font-weight: bold;'>Recojan</span> sus sets de legos y guárdenlos listos para próximas exploraciones creativas. <br><br>
+                    - <span style='color: red; font-weight: bold;'>Limpien</span> sus áreas de trabajo y déjenlas listas para futuras exploraciones y el desarrollo de nuevo código. <br><br>
+                    ¡Recuerden que el orden es un reflejo de nuestro compromiso con la precisión, la eficiencia y la excelencia!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+
+    </div>
+</body>
+</html>
